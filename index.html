@@ -23,14 +23,14 @@
 		.top-row {
 
 		}
-		#elapsed, #elapsed2, #elapsed3 {
+		#elapsed, #elapsed2, #elapsed3, #elapsed4 {
 			font-size: 2em;
 			display: inline-block;
 		}
-		#one, #one2, #one3 {
+		#one, #one2, #one3, #one4 {
 			margin-right:-15px;
 		}
-		#two, #two2, #two3 {
+		#two, #two2, #two3, #two4 {
 			margin-left:-15px;
 		}
 		#weather {
@@ -216,7 +216,7 @@
 				<span id="two2"></span>
 				</div>
 		</div>
-		<p><br/></p>
+		<p></p>
 		<div class="top-row">
 			<div class="left-block"></div>
 			<div class="right-block">New York <hr/>	
@@ -228,6 +228,20 @@
 				<span id="one3"></span>
 				<span class="colon">:</span>
 				<span id="two3"></span>
+				</div>
+		</div>
+		<p></p>
+		<div class="top-row">
+			<div class="left-block"></div>
+			<div class="right-block">London <hr/>	
+			</div>
+		</div>
+		<div class="left-block"></div>
+		<div class="right-block">
+			<div id="elapsed4">
+				<span id="one4"></span>
+				<span class="colon">:</span>
+				<span id="two4"></span>
 				</div>
 		</div>
 
@@ -257,16 +271,21 @@
 		console.log("d", mt );
 		var h2 = h+3;
 		var h3 = h-13;
+		var h4 = h-8;
 		h3 = Math.abs(h3);
+		h4 = Math.abs(h4);
 		// var now2 = new Date(h+3+":"+m+":"+s);
 
 		var ampm = (h<12) ? "AM" : "PM";
 		var ampm2 = (h2<12) ? "AM" : "PM";
 		var ampm3 = (h3<12) ? "AM" : "PM";
+		var ampm4 = (h4<12) ? "AM" : "PM";
 		s= (s<10) ? "0"+s : s;
 		m= (m<10) ? "0"+m : m;
 		h= (h<13) ? h : h-12;
 		h2= (h2<13) ? h2 : h2-12;
+		h3= (h3<13) ? h3 : h3-12;
+		h4= (h4<13) ? h4 : h4-12;
 		// +s+" "
 		$("#one").html(h);
 		$("#two").html(m+" "+ampm);
@@ -278,6 +297,9 @@
 		// new york
 		$("#one3").html(h3);
 		$("#two3").html(m+" "+ampm3);
+		// london
+		$("#one4").html(h4);
+		$("#two4").html(m+" "+ampm4);
 
 		// count++;
 		// $("#count").html(Math.floor(count/60)+":"+count%60);
